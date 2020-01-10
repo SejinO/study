@@ -1,0 +1,22 @@
+html, body {
+  margin: 0 auto;
+  padding: 0 auto;
+  font-family: 'Sunflower', sans-serif;
+
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+h1, h2{
+  color:black;
+  text-align: center;
+ 
+}
+h1{
+  font-size: 25px;
+}
+h2{
+  line-height: 0.5em;
+  font-size: 20px;
+}
