@@ -33,8 +33,6 @@ const Init = () => {
 	light.shadow.mapSize.height = 5120;
 	scene.add(light);
 
-	
-
 	/*--------------------------------------------*/
 	//렌더러 설정 코드.
 	const renderer = new THREE.WebGLRenderer({
