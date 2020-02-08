@@ -5,7 +5,7 @@ const Init = () => {
 	/*--------------------------------------------*/
 	//씬 추가
 	const scene = new THREE.Scene();
-	scene.background = new THREE.Color(0x81ecec);
+	scene.background = new THREE.Color(0xFFFFFF);
 
 	/*--------------------------------------------*/
 	//카메라 추가
@@ -15,18 +15,25 @@ const Init = () => {
 	//메쉬 추가
 
 
-	const geo = new THREE.BoxGeometry(10, 10, 10);
+	const geo = new THREE.BoxGeometry(5, 0, 5);
+		const geo2 = new THREE.BoxGeometry(5, 0, 5);
+
+	const material2 = new THREE.MeshLambertMaterial({
+		color:0x000fff
+	});
 	const material = new THREE.MeshLambertMaterial({
-		color: 0x55efc4
+		color:0x000fff
 	});
 	const mesh = new THREE.Mesh(geo, material);
 		mesh.castShadow = true;
-
+	const mesh2 = new THREE.Mesh(geo2, material2);
+		mesh.castShadow = true;
 	scene.add(mesh);
+	scene.add(mesh2);
 
 	/*--------------------------------------------*/
 	//빛 추가
-	const light = new THREE.PointLight("rgb(200,200,255)");
+	const light = new THREE.PointLight("rgb(200,255,255)");
 	light.position.set(50, 50, 50);
 	light.castShadow = true;
 	light.shadow.mapSize.width = 5120;
@@ -50,7 +57,8 @@ const Init = () => {
 	camera.position.z = 30;
 	mesh.rotation.x = (Math.PI * 20) / 180;
 	mesh.rotation.y = (Math.PI * 20) / 180;
-
+	mesh2.rotation.x = (Math.PI * 20) / 180;
+	mesh2.rotation.y = (Math.PI * 20) / 180;
 	/*--------------------------------------------*/
 	//실제 렌더링 하는 코드입니다.
 	renderer.render(scene, camera);
@@ -60,6 +68,8 @@ const Init = () => {
 	const rotateObj = () => {
 		const speed = Math.floor(Math.random() * 3);
 		mesh.rotation.y += (Math.PI * speed) / 180;
+				mesh2.rotation.y -= (Math.PI * speed) / 180;
+
 		renderer.render(scene, camera);
 	requestAnimationFrame(rotateObj);
 	};
