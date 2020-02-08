@@ -1,7 +1,7 @@
-html, body {
-background-color: black;
-  margin: 0 auto;
-  padding: 0 auto;
+body {
   font-family: 'Sunflower', sans-serif;
-
+text-align: center;
+}
+h1{
+	font-size: 100px;
 }
