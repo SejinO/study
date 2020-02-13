@@ -1,3 +1,8 @@
+/* SEJIN OH
+SourceCode_
+github.com/designerSejinOH/Live
+*/
+
 let myFont;
 let code;
 let c;
