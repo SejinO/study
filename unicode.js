@@ -16,7 +16,9 @@ code = 0xAC00;
 
 
 }
-
+function windowResized() {
+			resizeCanvas(windowWidth, windowHeight);
+		}
 function draw() {
 background(0);
   textFont(myFont);
