@@ -13,6 +13,7 @@ function preload() {
 function setup() {
 createCanvas(windowWidth,windowHeight);
 code = 0xAC00;
+	background(0);
   textAlign(CENTER);
 	
 	 //DeviceOrientationEvent, DeviceMotionEvent
@@ -20,8 +21,9 @@ code = 0xAC00;
     //ios 13 device
     DeviceOrientationEvent.requestPermission()
     .catch(() => {
-    let button = createButton("click to allow to sensors");
+    let button = createButton("Please click to allow your sensors");
     button.style("font-size", "24px");
+		    button.style("background-color", "white");
     button.center();
     button.mousePressed(requsetAccess);
       throw error;
@@ -66,8 +68,6 @@ background(0);
     fill(255);
   text("shake it",width/2,height-50);
 	    textSize(10);
-
-	  text("The device has not been running since the iPhone X",width/2,height-40);
 
 }
 function deviceShaken(){
