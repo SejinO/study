@@ -15,17 +15,19 @@ function preload() {
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	code = 0xAC00;
-	background(0);
 	textAlign(CENTER);
-
+background(100);
 	//DeviceOrientationEvent, DeviceMotionEvent
 	if (typeof (DeviceOrientationEvent) !== 'undefined' && typeof (DeviceOrientationEvent.requestPermission) === 'function') {
 		//ios 13 device
 		DeviceOrientationEvent.requestPermission()
 			.catch(() => {
-				let button = createButton("Please click to allow your sensors");
-				button.style("font-size", "24px");
-				button.style("background-color", "white");
+				let button = createButton("Please click to allow sensors");
+				button.style("font-size", "20px");
+			button.style("color","white");
+				button.style("background-color", "black");
+			button.style("box-shadow","5px 5px 5px")
+			
 				button.center();
 				button.mousePressed(requsetAccess);
 				throw error;
